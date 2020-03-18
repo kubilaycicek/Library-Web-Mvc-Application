@@ -14,7 +14,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Yayınevi Ekleme Formu </h6>
         </div>
         <div class="card-body">
-            <form action="#" th:action="@{/publisher/update}" method="post" th:object="${publisherDto}">
+            <form action="#" th:action="@{/web/publisher/update}" method="post" th:object="${publisherDto}">
                 <input type="hidden" th:field="*{id}"/>
                 <div class="form-group">
                     <label for="publisherName">Yazar Adı</label>

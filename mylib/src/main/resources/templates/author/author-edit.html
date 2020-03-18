@@ -16,7 +16,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Yazar Düzenleme Formu </h6>
         </div>
         <div class="card-body">
-            <form action="#" th:action="@{/author/update}" method="post" th:object="${authorDto}">
+            <form action="#" th:action="@{/web/author/update}" method="post" th:object="${authorDto}">
                 <input type="hidden" th:field="*{id}" />
                 <div class="form-group">
                     <label for="authorName">Yazar Adı</label>
