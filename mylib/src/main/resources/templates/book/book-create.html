@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/layout"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeni Kitap</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h1 class="h3 mb-2 text-gray-800">Yeni Yazar</h1>
+    <p class="mb-4"></p>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Kitap Ekleme Formu </h6>
+        </div>
+        <div class="card-body">
+            <form action="#" th:action="@{/web/book/add}" method="post" th:object="${bookDto}">
+                <div class="form-group">
+                    <label for="bookName">Kitap Adı</label>
+                    <input type="text" class="form-control" id="bookName" aria-describedby="authorName"
+                           placeholder="Yazar adını giriniz..." th:field="*{name}"/>
+                    <small id="bookNameHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
+                </div>
+                <div class="form-group">
+                    <label for="bookSubName">Kitap Alt Adı</label>
+                    <input type="text" class="form-control" id="bookSubName" aria-describedby="authorName"
+                           placeholder="Yazar adını giriniz..." th:field="*{subName}"/>
+                    <small id="bookSubNameHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
+                </div>
+                <div class="form-group">
+                    <label>Yayınevi </label>
+                    <select class="form-control custom-select" th:field="*{publisherDto}">
+                        <option th:each="publisher : ${publishers}" th:value="${publisher.getId()}"
+                                th:text="${publisher.getName()}"></option>
+                    </select>
+                </div>
+                <div class="form-group">S
+                    <label>Yazar </label>
+                    <select class="form-control custom-select" th:field="*{authorDto}">
+                        <option th:each="author : ${authors}" th:value="${author.getId()}"
+                                th:text="${author.getName()}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bookSerial">Kitap Seri</label>
+                    <input type="text" class="form-control" id="bookSerial" aria-describedby="authorName"
+                           placeholder="Yazar adını giriniz..." th:field="*{serialName}"/>
+                    <small id="bookSerialHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
+                </div>
+                <div class="form-group">
+                    <label for="bookISBNNo">ISBN No</label>
+                    <input type="text" class="form-control" id="bookISBNNo" aria-describedby="authorName"
+                           placeholder="Yazar adını giriniz..." th:field="*{isbnNumber}"/>
+                    <small id="bookISBNNoHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
+                </div>eö
+
+                <div class="form-group">
+                    <label for="bookSerial">Açıklama</label>
+                    <textarea type="text" class="form-control" rows="3" id="bookDescription"
+                              aria-describedby="bookDescription"
+                              placeholder="Yazar Açıklamasını giriniz..." th:field="*{description}"></textarea>
+                    <small id="bookDescriptionHelp" class="form-text text-muted">Lütfen bu alanı boş
+                        geçmeyiniz...</small>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

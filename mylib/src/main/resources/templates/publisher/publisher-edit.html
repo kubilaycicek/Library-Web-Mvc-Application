@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/layout"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeni Yayınevi</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h1 class="h3 mb-2 text-gray-800">Yeni Yayınevi</h1>
+    <p class="mb-4"></p>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Yayınevi Ekleme Formu </h6>
+        </div>
+        <div class="card-body">
+            <form action="#" th:action="@{/publisher/update}" method="post" th:object="${publisherDto}">
+                <input type="hidden" th:field="*{id}"/>
+                <div class="form-group">
+                    <label for="publisherName">Yazar Adı</label>
+                    <input type="text" class="form-control" id="publisherName" aria-describedby="authorName"
+                           placeholder="Yayınevi adını giriniz..." th:field="*{name}"/>
+                    <small id="publisherNameHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
+                </div>
+                <div class="form-group">
+                    <label for="publisherDescription">Açıklama</label>
+                    <input type="text" class="form-control" id="publisherDescription"
+                           placeholder="Yayınevi Açıklamasını giriniz..." th:field="*{description}">
+                    <small id="publisherDescriptionHelp" class="form-text text-muted">Lütfen bu alanı boş
+                        geçmeyiniz...</small>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
