@@ -34,6 +34,8 @@ public class User implements Serializable {
 	@Column
 	private String surname;
 	@Column
+	private String username;
+	@Column
 	private String email;
 	@Column
 	private String password;
@@ -41,7 +43,13 @@ public class User implements Serializable {
 	private String phone;
 	@Column
 	private boolean isActive;
+
+	@Column(columnDefinition = "TINYINT", length = 1)
+	private Boolean isManager;
+
+	/*
 	@OneToOne
 	@JoinColumn
 	private Role role;
+	*/
 }

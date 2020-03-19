@@ -3,7 +3,7 @@
       xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Yeni Yayınevi</title>
+    <title>Yayınevi | Yeni</title>
 </head>
 <body>
 <div layout:fragment="content">
@@ -14,7 +14,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Yayınevi Ekleme Formu </h6>
         </div>
         <div class="card-body">
-            <form action="#" th:action="@{/publisher/add}" method="post" th:object="${publisherDto}">
+            <form action="#" th:action="@{/web/publisher/add}" method="post" th:object="${publisherDto}">
                 <div class="form-group">
                     <label for="authorName">Yazar Adı</label>
                     <input type="text" class="form-control" id="authorName" aria-describedby="authorName"

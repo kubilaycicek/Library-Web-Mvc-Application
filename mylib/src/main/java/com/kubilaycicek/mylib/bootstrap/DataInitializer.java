@@ -3,24 +3,26 @@ package com.kubilaycicek.mylib.bootstrap;
 import com.kubilaycicek.mylib.dto.AuthorDto;
 import com.kubilaycicek.mylib.dto.BookDto;
 import com.kubilaycicek.mylib.dto.PublisherDto;
+import com.kubilaycicek.mylib.entity.User;
+import com.kubilaycicek.mylib.repository.UserRepository;
 import com.kubilaycicek.mylib.service.AuthorService;
 import com.kubilaycicek.mylib.service.BookService;
 import com.kubilaycicek.mylib.service.PublisherService;
+import com.kubilaycicek.mylib.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+@RequiredArgsConstructor
 @Component
 public class DataInitializer implements CommandLineRunner {
 
     private final AuthorService authorService;
     private final PublisherService publisherService;
-    private final BookService bookService;
-
-    public DataInitializer(AuthorService authorService, PublisherService publisherService, BookService bookService) {
-        this.authorService = authorService;
-        this.publisherService = publisherService;
-        this.bookService = bookService;
-    }
+    private final UserService userService;
+    private final UserRepository userRepository;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
     public void run(String... args) throws Exception {
@@ -49,24 +51,17 @@ public class DataInitializer implements CommandLineRunner {
         author2.setDescription("19 yüzyıl İngiliz kadın yazarı.");
         authorService.addAuthor(author2);
 
-        BookDto book = new BookDto();
-        book.setName("Aşk ve Gurur");
-        book.setIsbnNumber("1234");
-        book.setSerialName("Serial Name");
-        book.setSubName("Sub Name");
-        book.setAuthorDto(author2);
-        book.setPublisherDto(publisher2);
-        bookService.addBook(book);
-
-        BookDto book2 = new BookDto();
-        book2.setName("Aşk ve Gurur");
-        book2.setIsbnNumber("1234");
-        book2.setSerialName("Serial Name");
-        book2.setSubName("Sub Name");
-        book2.setAuthorDto(author);
-        book2.setPublisherDto(publisher);
-        bookService.addBook(book2);
-
-
+        User user = new User();
+        user.setActive(true);
+        user.setEmail("kubilaycicek");
+        user.setUsername("kubilaycicek");
+        user.setName("kubilay");
+        user.setSurname("CICEK");
+        user.setPhone("05544062486");
+        user.setIsManager(true);
+        user.setPassword(bCryptPasswordEncoder.encode("1234"));
+        userRepository.save(user);
+        System.out.println("kullanııcılar yüklendi");
+        System.out.println(userRepository.findAll().toString());
     }
 }

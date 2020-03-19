@@ -1,6 +1,7 @@
 package com.kubilaycicek.mylib.service.impl;
 
 import com.kubilaycicek.mylib.dto.UserDto;
+import com.kubilaycicek.mylib.entity.User;
 import com.kubilaycicek.mylib.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,11 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
 	private final UserRepository userRepository;
+
+	@Override
+	public User findByUsername(String username) {
+		return userRepository.findByUsername(username).orElse(null);
+	}
 
 	@Override
 	public UserDto addUser(UserDto userDto) {

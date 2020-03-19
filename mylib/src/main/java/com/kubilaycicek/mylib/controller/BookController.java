@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping(Mappings.WEB_CONTROLLER_URL+Mappings.BOOK_URL)
+@RequestMapping(Mappings.WEB_CONTROLLER_URL + Mappings.BOOK_URL)
 public class BookController {
 
     private final BookService bookService;
@@ -23,7 +23,7 @@ public class BookController {
 
     @GetMapping(value = "list")
     public String list(Model model) {
-        model.addAttribute("books",bookService.getAllBook() );
+        model.addAttribute("books", bookService.getAllBook());
         return "book/book-list";
     }
 
@@ -32,24 +32,27 @@ public class BookController {
         BookDto bookDto = new BookDto();
         bookDto.setAuthorDto(new AuthorDto());
         bookDto.setPublisherDto(new PublisherDto());
-        model.addAttribute("bookDto",new BookDto());
-        model.addAttribute("authors",authorService.getAllAuthor());
-        model.addAttribute("publishers",publisherService.getAllPublisher());
+        model.addAttribute("bookDto", new BookDto());
+        model.addAttribute("authors", authorService.getAllAuthor());
+        model.addAttribute("publishers", publisherService.getAllPublisher());
         return "book/book-create";
     }
 
-    @PostMapping(value = "add")
-    @ResponseBody
-    public String add(@ModelAttribute(name = "bookDto") BookDto bookDto) {
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String add(@ModelAttribute BookDto bookDto) {
         bookService.addBook(bookDto);
         return "redirect:list";
     }
 
     @GetMapping(value = "edit/{id}")
     public String showEditForm(@PathVariable("id") long id, Model model) {
-        BookDto bookDTO = bookService.getByBookID(id);
-        if (bookDTO != null)
-            model.addAttribute("bookDTO", bookDTO);
+        BookDto bookDto = bookService.getByBookID(id);
+        if (bookDto != null) {
+            model.addAttribute("authors", authorService.getAllAuthor());
+            model.addAttribute("publishers", publisherService.getAllPublisher());
+            model.addAttribute("bookDto", bookDto);
+        }
+
         return "book/book-edit";
     }
 

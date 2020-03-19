@@ -3,15 +3,15 @@
       xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Yeni Yayınevi</title>
+    <title>Yayınevi | Düzenle</title>
 </head>
 <body>
 <div layout:fragment="content">
-    <h1 class="h3 mb-2 text-gray-800">Yeni Yayınevi</h1>
+    <h1 class="h3 mb-2 text-gray-800">Yayın Evi Düzenleme</h1>
     <p class="mb-4"></p>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Yayınevi Ekleme Formu </h6>
+            <h6 class="m-0 font-weight-bold text-primary">Yayınevi Düzenleme Formu </h6>
         </div>
         <div class="card-body">
             <form action="#" th:action="@{/web/publisher/update}" method="post" th:object="${publisherDto}">

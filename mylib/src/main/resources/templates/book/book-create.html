@@ -3,11 +3,11 @@
       xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Yeni Kitap</title>
+    <title>Kitap | Yeni</title>
 </head>
 <body>
 <div layout:fragment="content">
-    <h1 class="h3 mb-2 text-gray-800">Yeni Yazar</h1>
+    <h1 class="h3 mb-2 text-gray-800">Yeni Kitap</h1>
     <p class="mb-4"></p>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -29,14 +29,15 @@
                 </div>
                 <div class="form-group">
                     <label>Yayınevi </label>
-                    <select class="form-control custom-select" th:field="*{publisherDto}">
-                        <option th:each="publisher : ${publishers}" th:value="${publisher.getId()}"
+                    <select class="form-control custom-select" th:field="*{publisherDto.id}">
+                        <option th:each="publisher : ${publishers}"
+                                th:value="${publisher.getId()}"
                                 th:text="${publisher.getName()}"></option>
                     </select>
                 </div>
                 <div class="form-group">S
                     <label>Yazar </label>
-                    <select class="form-control custom-select" th:field="*{authorDto}">
+                    <select class="form-control custom-select" th:field="*{authorDto.id}">
                         <option th:each="author : ${authors}" th:value="${author.getId()}"
                                 th:text="${author.getName()}"></option>
                     </select>
@@ -52,8 +53,7 @@
                     <input type="text" class="form-control" id="bookISBNNo" aria-describedby="authorName"
                            placeholder="Yazar adını giriniz..." th:field="*{isbnNumber}"/>
                     <small id="bookISBNNoHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
-                </div>eö
-
+                </div>
                 <div class="form-group">
                     <label for="bookSerial">Açıklama</label>
                     <textarea type="text" class="form-control" rows="3" id="bookDescription"

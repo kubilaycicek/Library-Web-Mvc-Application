@@ -8,6 +8,5 @@ import com.kubilaycicek.mylib.repository.RoleRepository;
 @RequiredArgsConstructor
 @Service
 public class RoleServiceImpl {
-
 	private RoleRepository roleRepository;
 }

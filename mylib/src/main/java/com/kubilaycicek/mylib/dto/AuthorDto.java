@@ -1,11 +1,12 @@
 package com.kubilaycicek.mylib.dto;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+@EqualsAndHashCode
 @Data
+@ToString
 public class AuthorDto {
     private long id;
     private String name;

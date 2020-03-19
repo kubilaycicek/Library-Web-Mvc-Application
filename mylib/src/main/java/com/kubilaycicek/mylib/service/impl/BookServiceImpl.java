@@ -25,8 +25,11 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookDto addBook(BookDto bookDto) {
-        Book book = bookRepository.save(bookConverter.convertToBook(bookDto));
-        return bookConverter.convertToBookDTO(book);
+        Book book = bookConverter.convertToBook(bookDto);
+        book.setPublisher(publisherRepository.findFirstById(bookDto.getPublisherDto().getId()));
+        book.setAuthor(authorRepository.findFirstById(bookDto.getAuthorDto().getId()));
+
+        return bookConverter.convertToBookDTO(bookRepository.save(book));
     }
 
     @Override
@@ -40,7 +43,7 @@ public class BookServiceImpl implements BookService {
             book.setAuthor(authorRepository.findFirstById(bookDto.getAuthorDto().getId()));
             book.setPublisher(publisherRepository.findFirstById(bookDto.getPublisherDto().getId()));
         } else {
-            throw new IllegalArgumentException("Author does not exist !");
+            throw new IllegalArgumentException("Book does not exist !");
         }
         return bookConverter.convertToBookDTO((bookRepository.save(book)));
     }

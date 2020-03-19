@@ -32,11 +32,9 @@ public class Book implements Serializable {
 	@Column
 	private String description;
 
-	@ToString.Exclude
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false,targetEntity = Author.class)
 	private Author author;
 
-	@ToString.Exclude
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false,targetEntity = Publisher.class)
 	private Publisher publisher;
 
