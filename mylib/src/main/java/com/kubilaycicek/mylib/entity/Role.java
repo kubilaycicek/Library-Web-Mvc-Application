@@ -18,14 +18,9 @@ import lombok.ToString;
 @Entity
 @Data
 @ToString
-public class Role implements Serializable {
-
-	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column
-	private long id;
-	@Column
-	private String name;
-
+public class Role extends BaseEntity {
+    @Column(name = "name")
+    private String name;
+    @Column(name = "description")
+    private String description;
 }

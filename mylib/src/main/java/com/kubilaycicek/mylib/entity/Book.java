@@ -1,8 +1,6 @@
 package com.kubilaycicek.mylib.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -13,29 +11,23 @@ import java.io.Serializable;
 @Entity
 @Table
 @ToString
-public class Book implements Serializable {
+public class Book extends BaseEntity {
 
-	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column
-	private long id;
-	@Column
+	@Column(name = "name")
 	private String name;
-	@Column
+	@Column(name = "subname")
 	private String subname;
-	@Column
+	@Column(name = "serialName")
 	private String serialName;
-	@Column
+	@Column(name = "isbn")
 	private String isbnNumber;
-	@Column
+	@Column(name = "description")
 	private String description;
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false,targetEntity = Author.class)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, optional = false,targetEntity = Author.class)
 	private Author author;
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false,targetEntity = Publisher.class)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, optional = false,targetEntity = Publisher.class)
 	private Publisher publisher;
 
 }

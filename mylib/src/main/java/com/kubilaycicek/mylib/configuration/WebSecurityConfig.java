@@ -39,9 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         String[] publicLinks = {"/login", "/", "/index", "/images/**", "/css/**", "/webjars/**"};
-        String[] adminLinks = {"/h2-console/**", "/**/delete/", "/**/addform/", "/**/saveOrUpdate/", "/applications/index"
-                , "/**/showresume", "/**/update/"};
-        String[] userLinks = {"/**/resumeform/", "/**/applyform/", "/applications/mine"};
+        String[] adminLinks = {"/h2-console/**", "/**/delete/", "/**/add/", "/**/update/"};
 
         http
                 .headers().frameOptions().disable()
@@ -50,12 +48,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(publicLinks).permitAll()
                 .antMatchers(adminLinks).access("hasAuthority('ADMIN')")
-                .antMatchers(userLinks).access("hasAuthority('USER')")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login").permitAll()
-                .defaultSuccessUrl("/jobs?logsuccess")
+                .defaultSuccessUrl("/web/book/book-list")
                 .and()
                 .logout().invalidateHttpSession(true)
                 .clearAuthentication(true)

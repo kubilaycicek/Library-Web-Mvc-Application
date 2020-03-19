@@ -61,4 +61,10 @@ public class BookController {
         bookService.updateBook(bookDto);
         return "redirect:list";
     }
+
+    @GetMapping(value = "/delete/{id}")
+    public String delete(@PathVariable("id") long id) {
+        bookService.removeByBookID(id);
+        return "redirect:/web/book/list";
+    }
 }

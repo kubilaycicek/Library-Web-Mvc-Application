@@ -56,12 +56,12 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public BookDto getByBookID(long bookID) {
-        return bookConverter.convertToBookDTO(bookRepository.findFirstById(bookID));
+    public BookDto getByBookID(long bookId) {
+        return bookConverter.convertToBookDTO(bookRepository.findFirstById(bookId));
     }
 
     @Override
-    public void removeByBookID(long bookID) {
-        bookRepository.deleteById(bookID);
+    public void removeByBookID(long bookId) {
+        bookRepository.deleteById(bookId);
     }
 }

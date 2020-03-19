@@ -4,27 +4,20 @@ import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Data
 @Entity
 @Table
 @ToString
-public class Author implements Serializable {
+public class Author extends BaseEntity {
 
-	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column
-	private long id;
-
-	@Column
+	@Column(name = "name")
 	private String name;
 
-	@Column
+	@Column(name = "description")
 	private String description;
 
-	@OneToMany(fetch = FetchType.LAZY, targetEntity = Book.class, orphanRemoval = true,mappedBy = "author")
+	@OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL, targetEntity = Book.class, mappedBy = "author")
 	private List<Book> books;
 }

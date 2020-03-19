@@ -41,8 +41,13 @@
                         <td th:text="${publisher.id}"></td>
                         <td th:text="${publisher.name}"></td>
                         <td th:text="${publisher.description}"></td>
-                        <td><a th:href="@{/web/publisher/edit/{id} (id=${publisher.id})}" class="btn btn-primary"><i
-                                class="fas fa-user-edit ml-2"></i></a></td>
+                        <td><a th:href="@{/web/author/edit/{id} (id=${publisher.id})}"
+                               class="btn btn-info btn-circle btn-sm"><i class="fas fa-user-edit"></i></a>
+                            <a th:href="@{/web/publisher/delete/{id} (id=${publisher.id})}"
+                               class="btn btn-danger btn-circle btn-sm"
+                               onclick="return confirm('Silmek istediginize emin misin ? ');">
+                                <i class="fas fa-trash"></i></a></td>
+                        </td>
                     </tr>
                     </tbody>
                 </table>

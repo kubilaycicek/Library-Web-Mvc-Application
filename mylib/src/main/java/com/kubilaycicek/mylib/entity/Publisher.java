@@ -13,24 +13,16 @@ import java.util.List;
 @Entity
 @Table
 @ToString
-public class Publisher implements Serializable {
+public class Publisher extends BaseEntity {
 
-	private static final long serialVersionUID = 1L;
-
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    private long id;
-
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name = "description")
     private String description;
-    
+
     @OneToMany(fetch = FetchType.LAZY,
-    		targetEntity = Book.class,
-    		orphanRemoval = true,mappedBy = "publisher")
+            targetEntity = Book.class, cascade = CascadeType.ALL, mappedBy = "publisher")
     private List<Book> books;
 
 }

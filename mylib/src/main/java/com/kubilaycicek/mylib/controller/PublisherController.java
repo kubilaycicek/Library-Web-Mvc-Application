@@ -30,7 +30,7 @@ public class PublisherController {
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String add(@ModelAttribute(name = "publisherDto") PublisherDto publisherDTO) {
         publisherService.addPublisher(publisherDTO);
-        return "redirect:list";
+        return "redirect:/web/publisher/list";
     }
 
     @GetMapping(value = "edit/{id}")
@@ -44,6 +44,12 @@ public class PublisherController {
     @PostMapping(value = "/update")
     public String update(@ModelAttribute(name = "publisherDto") PublisherDto publisherDto) {
         publisherService.updatePublisher(publisherDto);
-        return "redirect:list";
+        return "redirect:/web/publisher/list";
+    }
+
+    @GetMapping(value = "/delete/{id}")
+    public String delete(@PathVariable("id") long id) {
+        publisherService.removeByPublisherID(id);
+        return "redirect:/web/publisher/list";
     }
 }

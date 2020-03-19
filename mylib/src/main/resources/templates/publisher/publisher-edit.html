@@ -29,7 +29,19 @@
                     <small id="publisherDescriptionHelp" class="form-text text-muted">Lütfen bu alanı boş
                         geçmeyiniz...</small>
                 </div>
-                <button type="submit" class="btn btn-primary pull-right">Kaydet</button>
+                <div class="text-right">
+                    <a th:href="@{/web/publisher/list}" class="btn btn-danger btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-arrow-alt-circle-left"></i>
+                    </span>
+                        <span class="text">Listeye Dön</span>
+                    </a>
+                    <button type="submit" class="btn btn-success btn-icon-split"><span
+                            class="icon text-white-50">
+                      <i class="fas fa-check"></i>
+                    </span>
+                        <span class="text"> Kaydet</span></button>
+                </div>
             </form>
         </div>
     </div>

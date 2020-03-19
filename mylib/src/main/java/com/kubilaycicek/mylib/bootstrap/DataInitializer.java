@@ -20,7 +20,6 @@ public class DataInitializer implements CommandLineRunner {
 
     private final AuthorService authorService;
     private final PublisherService publisherService;
-    private final UserService userService;
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -34,7 +33,7 @@ public class DataInitializer implements CommandLineRunner {
         PublisherDto publisher = new PublisherDto();
         publisher.setName("İş Bankası Kültür Yayınları");
         publisher.setDescription("Türkiye İş Bankası kuruluşudur.");
-        PublisherDto publisherDTO = publisherService.addPublisher(publisher);
+        publisherService.addPublisher(publisher);
 
         PublisherDto publisher2 = new PublisherDto();
         publisher2.setName("Yapı Kredi Yayınları");
@@ -52,16 +51,13 @@ public class DataInitializer implements CommandLineRunner {
         authorService.addAuthor(author2);
 
         User user = new User();
-        user.setActive(true);
         user.setEmail("kubilaycicek");
         user.setUsername("kubilaycicek");
         user.setName("kubilay");
         user.setSurname("CICEK");
-        user.setPhone("05544062486");
         user.setIsManager(true);
         user.setPassword(bCryptPasswordEncoder.encode("1234"));
         userRepository.save(user);
-        System.out.println("kullanııcılar yüklendi");
-        System.out.println(userRepository.findAll().toString());
+
     }
 }

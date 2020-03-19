@@ -51,6 +51,12 @@ public class PublisherServiceImpl implements PublisherService {
 
     @Override
     public void removeByPublisherID(long publisherID) {
-        publisherRepository.deleteById(publisherID);
+
+        try{
+            publisherRepository.deleteById(publisherID);
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+
     }
 }
