@@ -1,86 +1,93 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/layout"
-      xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Kitap | Düzenleme</title>
+    <object th:replace="fragments/header :: head"></object>
+    <div th:replace="fragments/header"></div>
+    <title>Kitap | Düzenle</title>
 </head>
 <body>
-<div layout:fragment="content">
-    <h1 class="h3 mb-2 text-gray-800">Kitap Düzenleme</h1>
-    <p class="mb-4"></p>
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Kitap Düzenleme Formu </h6>
-        </div>
-        <div class="card-body">
-            <form action="#" th:action="@{/web/book/update}" method="post" th:object="${bookDto}">
-                <input type="hidden" th:field="*{id}"/>
-                <div class="form-group">
-                    <label for="bookName">Kitap Adı</label>
-                    <input type="text" class="form-control" id="bookName" aria-describedby="authorName"
-                           placeholder="Yazar adını giriniz..." th:field="*{name}"/>
-                    <small id="bookNameHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
-                </div>
-                <div class="form-group">
-                    <label for="bookSubName">Kitap Alt Adı</label>
-                    <input type="text" class="form-control" id="bookSubName" aria-describedby="authorName"
-                           placeholder="Yazar adını giriniz..." th:field="*{subName}"/>
-                    <small id="bookSubNameHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
-                </div>
-                <div class="form-group">
-                    <label>Yayınevi </label>
-                    <select class="form-control custom-select" th:field="*{publisherDto.id}">
-                        <option th:each="publisher : ${publishers}"
-                                th:value="${publisher.getId()}"
-                                th:selected="${publisher.equals(bookDto.getPublisherDto())}"
-                                th:text="${publisher.getName()}"></option>
-                    </select>
-                </div>
-                <div class="form-group">S
-                    <label>Yazar </label>
-                    <select class="form-control custom-select" th:field="*{authorDto.id}">
-                        <option th:each="author : ${authors}" th:value="${author.getId()}"
-                                th:selected="${author.equals(bookDto.getAuthorDto())}"
-                                th:text="${author.getName()}"></option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="bookSerial">Kitap Seri</label>
-                    <input type="text" class="form-control" id="bookSerial" aria-describedby="authorName"
-                           placeholder="Yazar adını giriniz..." th:field="*{serialName}"/>
-                    <small id="bookSerialHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
-                </div>
-                <div class="form-group">
-                    <label for="bookISBNNo">ISBN No</label>
-                    <input type="text" class="form-control" id="bookISBNNo" aria-describedby="authorName"
-                           placeholder="Yazar adını giriniz..." th:field="*{isbnNumber}"/>
-                    <small id="bookISBNNoHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
-                </div>
-                <div class="form-group">
-                    <label for="bookSerial">Açıklama</label>
-                    <textarea type="text" class="form-control" rows="3" id="bookDescription"
-                              aria-describedby="bookDescription"
-                              placeholder="Yazar Açıklamasını giriniz..." th:field="*{description}"></textarea>
-                    <small id="bookDescriptionHelp" class="form-text text-muted">Lütfen bu alanı boş
-                        geçmeyiniz...</small>
-                </div>
-                <div class="text-right">
-                    <a th:href="@{/web/book/list}" class="btn btn-danger btn-icon-split">
+<div>
+    <div th:replace="fragments/menu"></div>
+    <div class="container-fluid">
+        <h1 class="h3 mb-2 text-gray-800">Kitap Düzenleme</h1>
+        <p class="mb-4"></p>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Kitap Düzenleme Formu </h6>
+            </div>
+            <div class="card-body">
+                <form action="#" th:action="@{/web/book/update}" method="post" th:object="${bookDto}">
+                    <input type="hidden" th:field="*{id}"/>
+                    <div class="form-group">
+                        <label for="bookName">Kitap Adı</label>
+                        <input type="text" class="form-control" id="bookName" aria-describedby="authorName"
+                               placeholder="Yazar adını giriniz..." th:field="*{name}"/>
+                        <small id="bookNameHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookSubName">Kitap Alt Adı</label>
+                        <input type="text" class="form-control" id="bookSubName" aria-describedby="authorName"
+                               placeholder="Yazar adını giriniz..." th:field="*{subName}"/>
+                        <small id="bookSubNameHelp" class="form-text text-muted">Lütfen bu alanı boş
+                            geçmeyiniz...</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Yayınevi </label>
+                        <select class="form-control custom-select" th:field="*{publisherDto.id}">
+                            <option th:each="publisher : ${publishers}"
+                                    th:value="${publisher.getId()}"
+                                    th:selected="${publisher.equals(bookDto.getPublisherDto())}"
+                                    th:text="${publisher.getName()}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">S
+                        <label>Yazar </label>
+                        <select class="form-control custom-select" th:field="*{authorDto.id}">
+                            <option th:each="author : ${authors}" th:value="${author.getId()}"
+                                    th:selected="${author.equals(bookDto.getAuthorDto())}"
+                                    th:text="${author.getName()}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookSerial">Kitap Seri</label>
+                        <input type="text" class="form-control" id="bookSerial" aria-describedby="authorName"
+                               placeholder="Yazar adını giriniz..." th:field="*{serialName}"/>
+                        <small id="bookSerialHelp" class="form-text text-muted">Lütfen bu alanı boş
+                            geçmeyiniz...</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookISBNNo">ISBN No</label>
+                        <input type="text" class="form-control" id="bookISBNNo" aria-describedby="authorName"
+                               placeholder="Yazar adını giriniz..." th:field="*{isbnNumber}"/>
+                        <small id="bookISBNNoHelp" class="form-text text-muted">Lütfen bu alanı boş
+                            geçmeyiniz...</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookSerial">Açıklama</label>
+                        <textarea type="text" class="form-control" rows="3" id="bookDescription"
+                                  aria-describedby="bookDescription"
+                                  placeholder="Yazar Açıklamasını giriniz..." th:field="*{description}"></textarea>
+                        <small id="bookDescriptionHelp" class="form-text text-muted">Lütfen bu alanı boş
+                            geçmeyiniz...</small>
+                    </div>
+                    <div class="text-right">
+                        <a th:href="@{/web/book/list}" class="btn btn-danger btn-icon-split">
                     <span class="icon text-white-50">
                       <i class="fas fa-arrow-alt-circle-left"></i>
                     </span>
-                        <span class="text">Listeye Dön</span>
-                    </a>
-                    <button type="submit" class="btn btn-success btn-icon-split"><span
-                            class="icon text-white-50">
+                            <span class="text">Listeye Dön</span>
+                        </a>
+                        <button type="submit" class="btn btn-success btn-icon-split"><span
+                                class="icon text-white-50">
                       <i class="fas fa-check"></i>
                     </span>
-                        <span class="text"> Kaydet</span></button>
-                </div>
-            </form>
+                            <span class="text"> Kaydet</span></button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+    <div th:replace="fragments/footer"></div>
 </div>
 </body>
 </html>

@@ -1,49 +1,54 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/layout"
-      xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <object th:replace="fragments/header :: head"></object>
+    <div th:replace="fragments/header"></div>
     <title>Yazar | Yeni</title>
 </head>
 <body>
-<div layout:fragment="content">
-    <h1 class="h3 mb-2 text-gray-800">Yeni Yazar</h1>
-    <p class="mb-4"></p>
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Yazar Ekleme Formu </h6>
-        </div>
-        <div class="card-body">
-            <form action="#" th:action="@{/web/author/add}" method="post" th:object="${authorDto}">
-                <div class="form-group">
-                    <label for="authorName">Yazar Adı</label>
-                    <input type="text" class="form-control" id="authorName" aria-describedby="authorName"
-                           placeholder="Yazar adını giriniz..." th:field="*{name}"/>
-                    <small id="authorNameHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
-                </div>
-                <div class="form-group">
-                    <label for="authorDescription">Açıklama</label>
-                    <input type="text" class="form-control" id="authorDescription"
-                           placeholder="Yazar Açıklamasını giriniz..." th:field="*{description}">
-                    <small id="authorDescriptionHelp" class="form-text text-muted">Lütfen bu alanı boş
-                        geçmeyiniz...</small>
-                </div>
-                <div class="text-right">
-                    <a th:href="@{/web/author/list}" class="btn btn-danger btn-icon-split">
+<div>
+    <div th:replace="fragments/menu"></div>
+    <div class="container-fluid">
+        <h1 class="h3 mb-2 text-gray-800">Yeni Yazar</h1>
+        <p class="mb-4"></p>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Yazar Ekleme Formu </h6>
+            </div>
+            <div class="card-body">
+                <form action="#" th:action="@{/web/author/add}" method="post" th:object="${authorDto}">
+                    <div class="form-group">
+                        <label for="authorName">Yazar Adı</label>
+                        <input type="text" class="form-control" id="authorName" aria-describedby="authorName"
+                               placeholder="Yazar adını giriniz..." th:field="*{name}"/>
+                        <small id="authorNameHelp" class="form-text text-muted">Lütfen bu alanı boş
+                            geçmeyiniz...</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="authorDescription">Açıklama</label>
+                        <input type="text" class="form-control" id="authorDescription"
+                               placeholder="Yazar Açıklamasını giriniz..." th:field="*{description}">
+                        <small id="authorDescriptionHelp" class="form-text text-muted">Lütfen bu alanı boş
+                            geçmeyiniz...</small>
+                    </div>
+                    <div class="text-right">
+                        <a th:href="@{/web/author/list}" class="btn btn-danger btn-icon-split">
                     <span class="icon text-white-50">
                       <i class="fas fa-arrow-alt-circle-left"></i>
                     </span>
-                        <span class="text">Listeye Dön</span>
-                    </a>
-                    <button type="submit" class="btn btn-success btn-icon-split"><span
-                            class="icon text-white-50">
+                            <span class="text">Listeye Dön</span>
+                        </a>
+                        <button type="submit" class="btn btn-success btn-icon-split"><span
+                                class="icon text-white-50">
                       <i class="fas fa-check"></i>
                     </span>
-                        <span class="text"> Kaydet</span></button>
-                </div>
-            </form>
+                            <span class="text"> Kaydet</span></button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+    <div th:replace="fragments/footer"></div>
 </div>
 </body>
 </html>

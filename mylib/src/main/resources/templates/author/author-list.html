@@ -1,58 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/layout"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Yazar | Liste</title>
+    <object th:replace="fragments/header :: head"></object>
+    <div th:replace="fragments/header"></div>
     <link th:href="@{/vendor/datatables/dataTables.bootstrap4.min.css}" rel="stylesheet">
+    <title>Yazar | Liste</title>
 </head>
 <body>
-<div layout:fragment="content">
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">YAYINEVLERİ</h1>
-    <p class="mb-4"></p>
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Yayınevi Listesi</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Ad</th>
-                        <th>Açıklama</th>
-                        <th>İşlem</th>
-
-                    </tr>
-                    </thead>
-                    <tfoot>
-                    <tr>
-                        <th>Id</th>
-                        <th>Ad</th>
-                        <th>Açıklama</th>
-                        <th>İşlem</th>
-                    </tr>
-                    </tfoot>
-                    <tbody>
-                    <tr th:each="author : ${authors}">
-                        <td th:text="${author.id}"></td>
-                        <td th:text="${author.name}"></td>
-                        <td th:text="${author.description}"></td>
-                        <td><a th:href="@{/web/author/edit/{id} (id=${author.id})}"
-                               class="btn btn-info btn-circle btn-sm"><i class="fas fa-user-edit"></i></a>
-                            <a th:href="@{/web/author/delete/{id} (id=${author.id})}"
-                               class="btn btn-danger btn-circle btn-sm"
-                               onclick="return confirm('Silmek istediginize emin misin ? ');">
-                                <i class="fas fa-trash"></i></a></td>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+<div>
+    <div th:replace="fragments/menu"></div>
+    <div class="container-fluid">
+        <h1 class="h3 mb-2 text-gray-800">Yazarlar</h1>
+        <p class="mb-4"></p>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Yayınevi Listesi</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Ad</th>
+                            <th>Açıklama</th>
+                            <th>İşlem</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Ad</th>
+                            <th>Açıklama</th>
+                            <th>İşlem</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr th:each="author : ${authors}">
+                            <td th:text="${author.id}"></td>
+                            <td th:text="${author.name}"></td>
+                            <td th:text="${author.description}"></td>
+                            <td><a th:href="@{/web/author/edit/{id} (id=${author.id})}"
+                                   class="btn btn-info btn-circle btn-sm"><i class="fas fa-user-edit"></i></a>
+                                <a th:href="@{/web/author/delete/{id} (id=${author.id})}"
+                                   class="btn btn-danger btn-circle btn-sm"
+                                   onclick="return confirm('Silmek istediginize emin misin ? ');">
+                                    <i class="fas fa-trash"></i></a></td>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+        <div th:replace="fragments/footer"></div>
     </div>
 </div>
 </body>
