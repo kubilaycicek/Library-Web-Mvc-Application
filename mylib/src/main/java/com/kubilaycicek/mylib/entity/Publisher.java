@@ -10,7 +10,6 @@ import java.util.List;
 @Data
 @Entity
 @Table
-@ToString
 public class Publisher extends BaseEntity {
 
     @Column(name = "name")

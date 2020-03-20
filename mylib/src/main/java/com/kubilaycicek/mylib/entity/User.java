@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.ToString;
 
 @Data
-@ToString
 @Entity
 @Table
 public class User extends BaseEntity {
@@ -22,9 +21,8 @@ public class User extends BaseEntity {
     private String email;
     @Column(name = "password")
     private String password;
-    @Column(columnDefinition = "TINYINT", length = 1)
-    private Boolean isManager;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, optional = false,targetEntity = Role.class)
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE, optional = false,targetEntity = Role.class)
     private Role role;
 
 

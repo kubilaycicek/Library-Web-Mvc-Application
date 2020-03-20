@@ -10,7 +10,6 @@ import java.io.Serializable;
 @Data
 @Entity
 @Table
-@ToString
 public class Book extends BaseEntity {
 
 	@Column(name = "name")

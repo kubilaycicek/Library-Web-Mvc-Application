@@ -10,13 +10,12 @@ import lombok.ToString;
 @Table
 @Entity
 @Data
-@ToString
 public class Role extends BaseEntity {
     @Column(name = "name")
     private String name;
     @Column(name = "description")
     private String description;
-    @OneToMany(fetch = FetchType.LAZY,
+    @OneToMany(fetch = FetchType.EAGER,
             targetEntity = User.class, cascade = CascadeType.ALL, mappedBy = "role")
     private List<User> users;
 }
