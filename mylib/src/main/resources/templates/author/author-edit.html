@@ -28,8 +28,9 @@
                     </div>
                     <div class="form-group">
                         <label for="authorDescription">Açıklama</label>
-                        <input type="text" class="form-control" id="authorDescription"
-                               placeholder="Yazar Açıklamasını giriniz..." th:field="*{description}">
+                        <textarea type="text" class="form-control" rows="3" id="authorDescription"
+                                  aria-describedby="authorDescription"
+                                  placeholder="Yazar Açıklamasını giriniz..." th:field="*{description}"></textarea>
                         <small id="authorDescriptionHelp" class="form-text text-muted">Lütfen bu alanı boş
                             geçmeyiniz...</small>
                     </div>

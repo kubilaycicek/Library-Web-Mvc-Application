@@ -23,10 +23,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         this.userDetailsService = userDetailsService;
     }
 
-    @Bean
-    public BCryptPasswordEncoder bCryptPasswordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 
     @Bean
     public AuthenticationProvider authProvider() {
@@ -38,8 +34,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        String[] publicLinks = {"/login", "/", "/index", "/images/**", "/css/**", "/webjars/**"};
-        String[] adminLinks = {"/h2-console/**", "/**/delete/", "/**/add/", "/**/update/"};
+        String[] publicLinks = {"/login", "/", "/index", "/img/**", "/js/**", "/scss/**", "/vendor/**", "/css/**", "/webjars/**","/h2-console/**"};
+        String[] adminLinks = {"/h2-console/**",
+                "/api/**",
+                "/web/**",
+                "/author/**",
+                "/publisher/**",
+                "/book/**",
+                "/web/**"
+        };
 
         http
                 .headers().frameOptions().disable()
@@ -52,11 +55,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login").permitAll()
-                .defaultSuccessUrl("/web/book/book-list")
+                .defaultSuccessUrl("/web/book/list")
                 .and()
                 .logout().invalidateHttpSession(true)
                 .clearAuthentication(true)
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/index?logout").permitAll();
+                .logoutSuccessUrl("/login").permitAll();
     }
 }

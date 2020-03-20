@@ -1,11 +1,8 @@
 package com.kubilaycicek.mylib.entity;
 
-import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-;
+
+import javax.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 
@@ -25,8 +22,11 @@ public class User extends BaseEntity {
     private String email;
     @Column(name = "password")
     private String password;
-
     @Column(columnDefinition = "TINYINT", length = 1)
     private Boolean isManager;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, optional = false,targetEntity = Role.class)
+    private Role role;
+
+
 
 }

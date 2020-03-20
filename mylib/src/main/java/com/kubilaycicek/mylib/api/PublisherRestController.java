@@ -4,7 +4,6 @@ import com.kubilaycicek.mylib.constant.Mappings;
 import com.kubilaycicek.mylib.dto.PublisherDto;
 import com.kubilaycicek.mylib.entity.Publisher;
 import com.kubilaycicek.mylib.service.PublisherService;
-import io.swagger.models.Response;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

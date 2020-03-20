@@ -14,6 +14,6 @@ public class BookDto {
     private String serialName;
     private String isbnNumber;
     private String description;
-    private AuthorDto authorDto = new AuthorDto();
-    private PublisherDto publisherDto = new PublisherDto();
+    private AuthorDto authorDto;
+    private PublisherDto publisherDto;
 }

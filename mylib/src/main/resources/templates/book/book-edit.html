@@ -21,7 +21,7 @@
                     <div class="form-group">
                         <label for="bookName">Kitap Adı</label>
                         <input type="text" class="form-control" id="bookName" aria-describedby="authorName"
-                               placeholder="Yazar adını giriniz..." th:field="*{name}"/>
+                               placeholder="Yazar adını giriniz..." th:field="*{name}" th:required="required" />
                         <small id="bookNameHelp" class="form-text text-muted">Lütfen bu alanı boş geçmeyiniz...</small>
                     </div>
                     <div class="form-group">
@@ -58,7 +58,7 @@
                     <div class="form-group">
                         <label for="bookISBNNo">ISBN No</label>
                         <input type="text" class="form-control" id="bookISBNNo" aria-describedby="authorName"
-                               placeholder="Yazar adını giriniz..." th:field="*{isbnNumber}"/>
+                               placeholder="Yazar adını giriniz..." th:field="*{isbnNumber}" th:required="required"/>
                         <small id="bookISBNNoHelp" class="form-text text-muted">Lütfen bu alanı boş
                             geçmeyiniz...</small>
                     </div>

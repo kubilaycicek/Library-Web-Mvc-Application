@@ -26,7 +26,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) {
         User user = userService.findByUsername(username);
         if (user == null) throw new UsernameNotFoundException(username);
-
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
         if(user.getIsManager()) {
             grantedAuthorities.add(new SimpleGrantedAuthority("ADMIN"));

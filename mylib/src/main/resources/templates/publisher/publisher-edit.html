@@ -21,14 +21,15 @@
                     <div class="form-group">
                         <label for="publisherName">Yazar Adı</label>
                         <input type="text" class="form-control" id="publisherName" aria-describedby="authorName"
-                               placeholder="Yayınevi adını giriniz..." th:field="*{name}"/>
+                               placeholder="Yayınevi adını giriniz..." th:field="*{name}" th:required="required" />
                         <small id="publisherNameHelp" class="form-text text-muted">Lütfen bu alanı boş
                             geçmeyiniz...</small>
                     </div>
                     <div class="form-group">
                         <label for="publisherDescription">Açıklama</label>
-                        <input type="text" class="form-control" id="publisherDescription"
-                               placeholder="Yayınevi Açıklamasını giriniz..." th:field="*{description}">
+                        <textarea type="text" class="form-control" rows="3" id="publisherDescription"
+                                  aria-describedby="publisherDescription"
+                                  placeholder="Yazar Açıklamasını giriniz..." th:field="*{description}"></textarea>
                         <small id="publisherDescriptionHelp" class="form-text text-muted">Lütfen bu alanı boş
                             geçmeyiniz...</small>
                     </div>
