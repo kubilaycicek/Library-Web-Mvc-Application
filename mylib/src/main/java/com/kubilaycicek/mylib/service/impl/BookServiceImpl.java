@@ -28,7 +28,6 @@ public class BookServiceImpl implements BookService {
         Book book = bookConverter.convertToBook(bookDto);
         book.setPublisher(publisherRepository.findFirstById(bookDto.getPublisherDto().getId()));
         book.setAuthor(authorRepository.findFirstById(bookDto.getAuthorDto().getId()));
-
         return bookConverter.convertToBookDTO(bookRepository.save(book));
     }
 
