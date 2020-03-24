@@ -38,6 +38,8 @@ public class PublisherController {
         PublisherDto publisherDto = publisherService.getByPublisherID(id);
         if (publisherDto != null)
             model.addAttribute("publisherDto", publisherDto);
+        else
+            return "404";
         return "publisher/publisher-edit";
     }
 

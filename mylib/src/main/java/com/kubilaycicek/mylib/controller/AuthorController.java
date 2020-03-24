@@ -39,6 +39,8 @@ public class AuthorController {
         AuthorDto authorDto = authorService.getByAuthorID(id);
         if (authorDto != null)
             model.addAttribute("authorDto", authorDto);
+        else
+            return "404";
         return "author/author-edit";
     }
 

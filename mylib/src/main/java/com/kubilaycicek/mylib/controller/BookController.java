@@ -52,6 +52,8 @@ public class BookController {
             model.addAttribute("publishers", publisherService.getAllPublisher());
             model.addAttribute("bookDto", bookDto);
         }
+        else
+            return "404";
 
         return "book/book-edit";
     }

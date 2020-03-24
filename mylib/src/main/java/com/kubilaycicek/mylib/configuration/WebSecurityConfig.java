@@ -1,5 +1,6 @@
 package com.kubilaycicek.mylib.configuration;
 
+import com.kubilaycicek.mylib.constant.Mappings;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -46,12 +47,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login").permitAll()
+                .loginPage("/"+ Mappings.LOGIN_URL).permitAll()
                 .defaultSuccessUrl("/web/book/list")
                 .and()
                 .logout().invalidateHttpSession(true)
                 .clearAuthentication(true)
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/login").permitAll();
+                .logoutRequestMatcher(new AntPathRequestMatcher("/"+Mappings.LOGOUT_URL))
+                .logoutSuccessUrl("/"+Mappings.LOGIN_URL).permitAll();
     }
 }

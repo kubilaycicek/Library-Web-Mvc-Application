@@ -10,53 +10,58 @@
 <div>
     <div th:replace="fragments/menu"></div>
     <div class="container-fluid">
-    <h1 class="h3 mb-2 text-gray-800">Yayınevleri</h1>
-    <p class="mb-4"></p>
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Yayınevi Listesi </h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Ad</th>
-                        <th>Açıklama</th>
-                        <th>İşlem</th>
-                    </tr>
-                    </thead>
-                    <tfoot>
-                    <tr>
-                        <th>Id</th>
-                        <th>Ad</th>
-                        <th>Açıklama</th>
-                        <th>İşlem</th>
-                    </tr>
-                    </tfoot>
-                    <tbody>
-                    <tr th:each="publisher : ${publishers}">
-                        <td th:text="${publisher.id}"></td>
-                        <td th:text="${publisher.name}"></td>
-                        <td th:text="${publisher.description}"></td>
-                        <td><a th:href="@{/web/author/edit/{id} (id=${publisher.id})}"
-                               class="btn btn-info btn-circle btn-sm"><i class="fas fa-user-edit"></i></a>
-                            <a <a th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}"
-                                    th:href="@{/web/publisher/delete/{id} (id=${publisher.id})}"
-                               class="btn btn-danger btn-circle btn-sm"
-                               onclick="return confirm('Silmek istediginize emin misin ? ');">
-                                <i class="fas fa-trash"></i></a></td>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+        <h1 class="h3 mb-2 text-gray-800">Yayınevleri</h1>
+        <p class="mb-4"></p>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Yayınevi Listesi </h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Ad</th>
+                            <th>Açıklama</th>
+                            <th>İşlem</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Ad</th>
+                            <th>Açıklama</th>
+                            <th>İşlem</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr th:each="publisher : ${publishers}">
+                            <td th:text="${publisher.id}"></td>
+                            <td th:text="${publisher.name}"></td>
+                            <td th:text="${publisher.description}"></td>
+                            <td><a th:href="@{/web/author/edit/{id} (id=${publisher.id})}"
+                                   class="btn btn-info btn-circle btn-sm"><i class="fas fa-user-edit"></i></a>
+                                <a <a th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}"
+                                      th:href="@{/web/publisher/delete/{id} (id=${publisher.id})}"
+                                      class="btn btn-danger btn-circle btn-sm"
+                                      onclick="return confirm('Silmek istediginize emin misin ? ');">
+                                    <i class="fas fa-trash"></i></a></td>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+        <div th:replace="fragments/footer"></div>
+        <!-- Page level plugins -->
+        <script th:src="@{/vendor/datatables/jquery.dataTables.min.js}"></script>
+        <script th:src="@{/vendor/datatables/dataTables.bootstrap4.min.js}"></script>
+        <!-- Page level custom scripts -->
+        <script th:src="@{/js/demo/datatables-demo.js}"></script>
     </div>
-    <div th:replace="fragments/footer"></div>
-</div>
 </div>
 </body>
 </html>
