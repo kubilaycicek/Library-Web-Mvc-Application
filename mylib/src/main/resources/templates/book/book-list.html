@@ -54,7 +54,8 @@
                         <td th:text="${book.getIsbnNumber()}"></td>
                         <td><a th:href="@{/web/book/edit/{id} (id=${book.id})}"
                                class="btn btn-info btn-circle btn-sm"><i class="fas fa-user-edit"></i></a>
-                            <a th:href="@{/web/book/delete/{id} (id=${book.id})}"
+                             <a th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}"
+                                    th:href="@{/web/book/delete/{id} (id=${book.id})}"
                                class="btn btn-danger btn-circle btn-sm"
                                onclick="return confirm('Silmek istediginize emin misin ? ');">
                                 <i class="fas fa-trash"></i></a></td>

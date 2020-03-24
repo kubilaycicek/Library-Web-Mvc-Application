@@ -17,31 +17,12 @@ public class LoginController {
 
     private final UserService userService;
 
-    @RequestMapping({"/", ""})
+    @RequestMapping({"/", "", "login"})
     public String login() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (!(auth instanceof AnonymousAuthenticationToken)) {
-            System.out.println("deneme");
             return "redirect:/web/book/list";
         }
-        return "login";
-    }
-
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String register(Model model) {
-        model.addAttribute("userDto", new UserDto());
-        return "register";
-    }
-
-    @RequestMapping(value = "/registerSave", method = RequestMethod.GET)
-    public String registerSave(Model model) {
-        UserDto dto = (UserDto) model.getAttribute("userDto");
-        userService.addUser(dto);
-        return "register";
-    }
-
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    private String logout() {
         return "login";
     }
 }

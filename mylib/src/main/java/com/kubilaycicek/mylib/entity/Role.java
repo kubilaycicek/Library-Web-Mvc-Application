@@ -5,8 +5,10 @@ import java.util.List;
 import javax.persistence.*;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+@EqualsAndHashCode(callSuper = true)
 @Table
 @Entity
 @Data
