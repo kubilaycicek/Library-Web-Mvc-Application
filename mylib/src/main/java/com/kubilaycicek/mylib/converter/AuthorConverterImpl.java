@@ -14,15 +14,20 @@ public class AuthorConverterImpl implements AuthorConverter {
 
     @Override
     public AuthorDto convertToAuthorDTO(Author author) {
-        if (author == null)
+        if (author == null){
             return null;
-        return modelMapper.map(author, AuthorDto.class);
+        }
+        else {
+            return modelMapper.map(author, AuthorDto.class);
+        }
     }
 
     @Override
     public Author convertToAuthor(AuthorDto authorDto) {
-        if (authorDto == null)
+        if (authorDto == null){
             return null;
-        return modelMapper.map(authorDto, Author.class);
+        }else {
+            return modelMapper.map(authorDto, Author.class);
+        }
     }
 }
