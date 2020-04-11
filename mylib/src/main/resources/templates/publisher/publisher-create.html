@@ -18,19 +18,15 @@
             <div class="card-body">
                 <form action="#" th:action="@{/web/publisher/add}" method="post" th:object="${publisherDto}">
                     <div class="form-group">
-                        <label for="authorName">Yazar Adı</label>
+                        <label for="authorName">Yayınevi Adı</label>
                         <input type="text" class="form-control" id="authorName" aria-describedby="authorName"
-                               placeholder="Yayınevi adını giriniz..." th:field="*{name}" th:required="required" />
-                        <small id="authorNameHelp" class="form-text text-muted">Lütfen bu alanı boş
-                            geçmeyiniz...</small>
+                               placeholder="Yayınevi ADINI giriniz..." th:field="*{name}" th:required="required" />
                     </div>
                     <div class="form-group">
                         <label for="authorDescription">Açıklama</label>
                         <textarea type="text" class="form-control" rows="3" id="authorDescription"
                                   aria-describedby="authorDescription"
-                                  placeholder="Yazar Açıklamasını giriniz..." th:field="*{description}"></textarea>
-                        <small id="authorDescriptionHelp" class="form-text text-muted">Lütfen bu alanı boş
-                            geçmeyiniz...</small>
+                                  placeholder="Yayınevi AÇIKLAMASINI giriniz..." th:field="*{description}"></textarea>
                     </div>
                     <div class="text-right">
                         <a th:href="@{/web/publisher/list}" class="btn btn-danger btn-icon-split">

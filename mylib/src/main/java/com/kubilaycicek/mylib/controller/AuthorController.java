@@ -50,7 +50,6 @@ public class AuthorController {
         return "redirect:/web/author/list";
     }
 
-
     @PostMapping(value = "/update")
     public String update(@ModelAttribute(name = "authorDto") AuthorDto authorDto) {
         authorService.updateAuthor(authorDto);

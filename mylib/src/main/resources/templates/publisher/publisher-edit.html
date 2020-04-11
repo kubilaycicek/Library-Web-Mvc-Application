@@ -9,7 +9,7 @@
 <div>
     <div th:replace="fragments/menu"></div>
     <div class="container-fluid">
-        <h1 class="h3 mb-2 text-gray-800">Yayın Evi Düzenleme</h1>
+        <h1 class="h3 mb-2 text-gray-800">Yayınevi Düzenleme</h1>
         <p class="mb-4"></p>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -19,19 +19,15 @@
                 <form action="#" th:action="@{/web/publisher/update}" method="post" th:object="${publisherDto}">
                     <input type="hidden" th:field="*{id}"/>
                     <div class="form-group">
-                        <label for="publisherName">Yazar Adı</label>
+                        <label for="publisherName">Yayınevi Adı</label>
                         <input type="text" class="form-control" id="publisherName" aria-describedby="authorName"
-                               placeholder="Yayınevi adını giriniz..." th:field="*{name}" th:required="required" />
-                        <small id="publisherNameHelp" class="form-text text-muted">Lütfen bu alanı boş
-                            geçmeyiniz...</small>
+                               placeholder="Yayınevi ADINI giriniz..." th:field="*{name}" th:required="required" />
                     </div>
                     <div class="form-group">
                         <label for="publisherDescription">Açıklama</label>
                         <textarea type="text" class="form-control" rows="3" id="publisherDescription"
                                   aria-describedby="publisherDescription"
-                                  placeholder="Yazar Açıklamasını giriniz..." th:field="*{description}"></textarea>
-                        <small id="publisherDescriptionHelp" class="form-text text-muted">Lütfen bu alanı boş
-                            geçmeyiniz...</small>
+                                  placeholder="Yayınevi AÇIKLAMASINI giriniz..." th:field="*{description}"></textarea>
                     </div>
                     <div class="text-right">
                         <a th:href="@{/web/publisher/list}" class="btn btn-danger btn-icon-split">

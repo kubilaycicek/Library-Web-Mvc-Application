@@ -28,16 +28,16 @@ class AuthorServiceImplTest {
     @Test
     void addAuthor() {
         AuthorDto authorDto = new AuthorDto();
+        authorDto.setId(1);
         authorDto.setName("Test-Name");
         authorDto.setDescription("Test-Description");
 
         Author authorMock = mock(Author.class);
-        AuthorDto authorDtoMock = mock(AuthorDto.class);
 
-        when(authorMock.getId()).thenReturn(1L);
-        when(authorConverter.convertToAuthor(ArgumentMatchers.any(AuthorDto.class))).thenReturn(authorMock);
-        when(authorRepository.save(ArgumentMatchers.any(Author.class))).thenReturn(authorMock);
-        when(authorConverter.convertToAuthorDTO(ArgumentMatchers.any(Author.class))).thenReturn(authorDtoMock);
+        lenient().when(authorMock.getId()).thenReturn(1L);
+        lenient().when(authorConverter.convertToAuthor(ArgumentMatchers.any(AuthorDto.class))).thenReturn(authorMock);
+        lenient().when(authorRepository.save(ArgumentMatchers.any(Author.class))).thenReturn(authorMock);
+        lenient().when(authorConverter.convertToAuthorDTO(ArgumentMatchers.any(Author.class))).thenReturn(authorDto);
 
         AuthorDto result = authorService.addAuthor(authorDto);
 
