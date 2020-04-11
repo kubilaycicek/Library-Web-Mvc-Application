@@ -7,7 +7,8 @@ Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştiriliyor.
  * Normal User  : normaluser   Password : 1234
   
 ## Kullanılan Teknolojiler
-* Spring Boot 
+* Java 11.0.6
+* Spring Boot 2.2.4
 * Spring Mvc
 * Spring Security
 * Thymleaf
@@ -29,3 +30,4 @@ Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştiriliyor.
 * Repository : JpaRepository'nin implementasyonlarının gerçekleştiği paket.
 * Service    : Servis Katmanı İşlemlerin gerçekleştirildiği paket.
 * Api        : Rest API paketi.
+* Test       : AuthorServiceImpl addAuthor metodu'nun testi yazıldı.
