@@ -7,6 +7,7 @@ Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştirildi.Uyg
 * H2 CONSOLE : http://localhost:8080/h2-console,
 * H2-CONSOLE JDBC URL   : jdbc:h2:mem:testdb
 ### Kullanılan Teknolojiler
+* Maven
 * Java 11.0.6
 * Spring Boot 2.2.4
 * Spring Mvc
