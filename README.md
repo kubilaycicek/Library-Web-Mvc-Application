@@ -27,11 +27,13 @@ Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştiriliyor.
 * Service    : Servis Katmanı İşlemlerin gerçekleştirildiği paket.
 * Api        : Rest API paketi.
 * Test       : AuthorServiceImpl addAuthor metodu'nun testi yazıldı.
+ 
+ ## Nasıl Çalıştırılır ?
+ mylib dizininde terminal ile açtıktan sonra ``` mvn clean install ``` komutunu çalıştıralım.
+ mylib/target dizinine mylib-0.0.1-SNAPSHOT.jar dosyası oluşturuldu.Bu dizine terminal ile açıp ``` java -jar mylib-0.0.1-SNAPSHOT.jar  ``` komutunu yazalım. <Enter>
+  Tarayıcınıza ``` localhost:8080 ``` adresinizi tuşlayarak giriş ekranını açabilirsiniz.
 
 ### Kullanıcı Bilgileri
  * Admin  User  : kubilaycicek Password : 1234 
- * Normal User  : normaluser   Password : 1234
- 
- ## Nasıl Çalıştırılır ?
- mylib dizininde terminal i açıp --mvn clean install komutu yazın.
+ * Normal User  : normaluser   Password : 1234 
  
