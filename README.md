@@ -31,3 +31,7 @@ Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştiriliyor.
 ### Kullanıcı Bilgileri
  * Admin  User  : kubilaycicek Password : 1234 
  * Normal User  : normaluser   Password : 1234
+ 
+ ## Nasıl Çalıştırılır ?
+ mylib dizininde terminal i açıp --mvn clean install komutu yazın.
+ 
