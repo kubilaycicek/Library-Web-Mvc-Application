@@ -20,11 +20,11 @@
                     <div class="form-group">
                         <label for="authorName">Yazar Adı</label>
                         <input type="text" class="form-control" id="authorName" aria-describedby="authorName"
-                               placeholder="Yazar ADINI giriniz..." th:field="*{name}" th:required="required" />
+                               placeholder="Yazar ADINI giriniz..." th:field="*{name}" th:required="required" maxlength="100" />
                     </div>
                     <div class="form-group">
                         <label for="authorDescription">Açıklama</label>
-                        <textarea type="text" class="form-control" rows="3" id="authorDescription"
+                        <textarea type="text" class="form-control" rows="3" id="authorDescription" maxlength="250"
                                   aria-describedby="authorDescription"
                                   placeholder="Yazar AÇIKLAMASINI giriniz..." th:field="*{description}"></textarea>
                     </div>

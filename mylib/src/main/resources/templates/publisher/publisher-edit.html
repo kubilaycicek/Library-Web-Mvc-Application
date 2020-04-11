@@ -20,12 +20,12 @@
                     <input type="hidden" th:field="*{id}"/>
                     <div class="form-group">
                         <label for="publisherName">Yayınevi Adı</label>
-                        <input type="text" class="form-control" id="publisherName" aria-describedby="authorName"
+                        <input type="text" class="form-control" id="publisherName" aria-describedby="authorName" maxlength="100"
                                placeholder="Yayınevi ADINI giriniz..." th:field="*{name}" th:required="required" />
                     </div>
                     <div class="form-group">
                         <label for="publisherDescription">Açıklama</label>
-                        <textarea type="text" class="form-control" rows="3" id="publisherDescription"
+                        <textarea type="text" class="form-control" rows="3" id="publisherDescription" maxlength="250"
                                   aria-describedby="publisherDescription"
                                   placeholder="Yayınevi AÇIKLAMASINI giriniz..." th:field="*{description}"></textarea>
                     </div>

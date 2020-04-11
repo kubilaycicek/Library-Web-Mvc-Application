@@ -19,12 +19,12 @@
                 <form action="#" th:action="@{/web/book/add}" method="post" th:object="${bookDto}">
                     <div class="form-group">
                         <label for="bookName">Kitap Adı</label>
-                        <input type="text" class="form-control" id="bookName" aria-describedby="authorName"
+                        <input type="text" class="form-control" id="bookName" aria-describedby="authorName" maxlength="100"
                                placeholder="Kitap ADINI giriniz..." th:field="*{name}" th:required="required"/>
                     </div>
                     <div class="form-group">
                         <label for="bookSubName">Kitap Alt Adı</label>
-                        <input type="text" class="form-control" id="bookSubName" aria-describedby="authorName"
+                        <input type="text" class="form-control" id="bookSubName" aria-describedby="authorName" maxlength="100"
                                placeholder="Kitap ALT adını giriniz..." th:field="*{subName}"/>
 
                     </div>
@@ -36,7 +36,7 @@
                                     th:text="${publisher.getName()}"></option>
                         </select>
                     </div>
-                    <div class="form-group">S
+                    <div class="form-group">
                         <label>Yazar </label>
                         <select class="form-control custom-select" th:field="*{authorDto.id}">
                             <option th:each="author : ${authors}" th:value="${author.getId()}"
@@ -45,17 +45,17 @@
                     </div>
                     <div class="form-group">
                         <label for="bookSerial">Kitap Seri</label>
-                        <input type="text" class="form-control" id="bookSerial" aria-describedby="authorName"
+                        <input type="text" class="form-control" id="bookSerial" aria-describedby="authorName" maxlength="100"
                                placeholder="Kitap seri giriniz..." th:field="*{serialName}"/>
                     </div>
                     <div class="form-group">
                         <label for="bookISBNNo">ISBN No</label>
-                        <input type="text" class="form-control" id="bookISBNNo" aria-describedby="authorName"
+                        <input type="text" class="form-control" id="bookISBNNo" aria-describedby="authorName" maxlength="100"
                                placeholder="ISBN no giriniz..." th:field="*{isbnNumber}" th:required="required" />
                     </div>
                     <div class="form-group">
                         <label for="bookSerial">Açıklama</label>
-                        <textarea type="text" class="form-control" rows="3" id="bookDescription"
+                        <textarea type="text" class="form-control" rows="3" id="bookDescription" maxlength="250"
                                   aria-describedby="bookDescription"
                                   placeholder="Kitap AÇIKLAMASINI giriniz..." th:field="*{description}"></textarea>
                     </div>

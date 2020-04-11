@@ -39,8 +39,8 @@
                         <tbody>
                         <tr th:each="author : ${authors}">
                             <td th:text="${author.id}"></td>
-                            <td th:text="${author.name}"></td>
-                            <td th:text="${author.description}"></td>
+                            <td th:text="${author.name.length() < 30 ? author.name : author.name.substring(0,30)}"></td>
+                            <td th:text="${author.description.length() < 30 ? author.description : author.description.substring(0,30)}"></td>
                             <td><a th:href="@{/web/author/edit/{id} (id=${author.id})}"
                                    class="btn btn-info btn-circle btn-sm"><i class="fas fa-user-edit"></i></a>
 

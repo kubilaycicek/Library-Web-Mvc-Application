@@ -35,8 +35,8 @@
                         <tr>
                             <th>Id</th>
                             <th>Ad</th>
-                            <th>-</th>
-                            <th>-</th>
+                            <th>Yazar</th>
+                            <th>Yayınevi</th>
                             <th>Alt Başlık</th>
                             <th>Seri Adı</th>
                             <th>ISBN No</th>
@@ -46,7 +46,7 @@
                         <tbody>
                         <tr th:each="book : ${books}">
                             <td th:text="${book.id}"></td>
-                            <td th:text="${book.getName()}"></td>
+                            <td th:text="${book.getName().length() < 30 ? book.getName() : book.getName().substring(0,30)}"></td>
                             <td th:text="${book.getAuthor().getName()}"></td>
                             <td th:text="${book.getPublisher().getName()}"></td>
                             <td th:text="${book.getSubname()}"></td>

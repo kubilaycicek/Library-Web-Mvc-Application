@@ -39,11 +39,11 @@
                         <tbody>
                         <tr th:each="publisher : ${publishers}">
                             <td th:text="${publisher.id}"></td>
-                            <td th:text="${publisher.name}"></td>
-                            <td th:text="${publisher.description}"></td>
+                            <td th:text="${publisher.name.length() < 30 ? publisher.name : publisher.name.substring(0,30)}"></td>
+                            <td th:text="${publisher.description.length() < 30 ? publisher.description : publisher.description.substring(0,30)}"></td>
                             <td><a th:href="@{/web/publisher/edit/{id} (id=${publisher.id})}"
                                    class="btn btn-info btn-circle btn-sm"><i class="fas fa-user-edit"></i></a>
-                                <a <a th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}"
+                                 <a th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}"
                                       th:href="@{/web/publisher/delete/{id} (id=${publisher.id})}"
                                       class="btn btn-danger btn-circle btn-sm"
                                       onclick="return confirm('Silmek istediginize emin misin ? ');">

@@ -19,12 +19,12 @@
                 <form action="#" th:action="@{/web/publisher/add}" method="post" th:object="${publisherDto}">
                     <div class="form-group">
                         <label for="authorName">Yayınevi Adı</label>
-                        <input type="text" class="form-control" id="authorName" aria-describedby="authorName"
+                        <input type="text" class="form-control" id="authorName" aria-describedby="authorName" maxlength="100"
                                placeholder="Yayınevi ADINI giriniz..." th:field="*{name}" th:required="required" />
                     </div>
                     <div class="form-group">
                         <label for="authorDescription">Açıklama</label>
-                        <textarea type="text" class="form-control" rows="3" id="authorDescription"
+                        <textarea type="text" class="form-control" rows="3" id="authorDescription" maxlength="250"
                                   aria-describedby="authorDescription"
                                   placeholder="Yayınevi AÇIKLAMASINI giriniz..." th:field="*{description}"></textarea>
                     </div>

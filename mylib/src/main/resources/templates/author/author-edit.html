@@ -21,14 +21,14 @@
                     <input type="hidden" th:field="*{id}"/>
                     <div class="form-group">
                         <label for="authorName">Yazar Adı</label>
-                        <input type="text" class="form-control" id="authorName" aria-describedby="authorName"
+                        <input type="text" class="form-control" id="authorName" aria-describedby="authorName" maxlength="100"
                                placeholder="Yazar ADINI giriniz..." th:field="*{name}"/>
                     </div>
                     <div class="form-group">
                         <label for="authorDescription">Açıklama</label>
                         <textarea type="text" class="form-control" rows="3" id="authorDescription"
                                   aria-describedby="authorDescription"
-                                  placeholder="Yazar AÇIKLAMASINI giriniz..." th:field="*{description}"></textarea>
+                                  placeholder="Yazar AÇIKLAMASINI giriniz..." th:field="*{description}" maxlength="250" ></textarea>
                     </div>
                     <div class="text-right">
                         <a th:href="@{/web/author/list}" class="btn btn-danger btn-icon-split">
