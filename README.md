@@ -20,7 +20,7 @@ Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştirildi.Uyg
 * Swagger
 
 ### Paketler
-* Bootstrap : Uygulama çalışırken ilk ayarlar burada gerçekleştirildi.
+* Bootstrap     : Uygulama çalışırken kullanıcı ekleme ve yetkilendirme burada gerçekleştirildi.
 * Configuration : Security, Swagger , ModelMapper ayarları ve bean'lar burada tanımlandı.
 * Constant   : Uygulama ile ilgili URL tanımlarını Mappings sınıfında static final olarak tanımlandı.
 * Controller : Spring Mvc Controller Sınıfları
