@@ -1,6 +1,6 @@
 # Spring Mvc & Thymleaf Kütüphane Uygulaması
 Spring Framework ile geliştirilmiş Kütüphane uygulaması.
-Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştiriliyor.
+Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştirildi.Uygulama ilk açıldığında iki adet kullanıcı tanımlı gelecektir.Standart ve Admin olarak yetkilendirilmiştir.Admin olarak giriş yapan kullanıcı her işlemi gerçekleştirebilir fakat Standart kullanıcı silme işlemi gerçekleştiremez.Standart Kullanıcı h2db console'a giriş yapamaz.
   
 ### Kullanılan Teknolojiler
 * Java 11.0.6
