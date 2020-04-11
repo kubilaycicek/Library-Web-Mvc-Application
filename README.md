@@ -2,7 +2,7 @@
 Spring Framework ile geliştirilmiş Kütüphane uygulaması.
 Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştiriliyor.
   
-## Kullanılan Teknolojiler
+### Kullanılan Teknolojiler
 * Java 11.0.6
 * Spring Boot 2.2.4
 * Spring Mvc
@@ -15,7 +15,7 @@ Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştiriliyor.
 * JUnit
 * Swagger
 
-## Paketler
+### Paketler
 * Bootstrap : Uygulama çalışırken ilk ayarlar burada gerçekleştirildi.
 * Configuration : Security, Swagger , ModelMapper ayarları ve bean'lar burada tanımlandı.
 * Constant   : Uygulama ile ilgili URL tanımlarını Mappings sınıfında static final olarak tanımlandı.
@@ -28,6 +28,6 @@ Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştiriliyor.
 * Api        : Rest API paketi.
 * Test       : AuthorServiceImpl addAuthor metodu'nun testi yazıldı.
 
-## Kullanıcı Bilgileri
+### Kullanıcı Bilgileri
  * Admin  User  : kubilaycicek Password : 1234 
  * Normal User  : normaluser   Password : 1234
