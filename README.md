@@ -17,14 +17,15 @@ Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştiriliyor.
 * Model Mapper 
 * JUnit
 * Swagger
+
 ## Paketler
-* bootstrap : Uygulama çalışırken ilk ayarlar burada gerçekleştirildi.
-* configuration : Security, Swagger , ModelMapper ayarları ve bean'lar burada tanımlandı.
-* constant   : Uygulama ile ilgili URL tanımlarını Mappings sınıfında static final olarak tanımlandı.
-* controller : Spring Mvc Controller Sınıfları
-* converter  : Data Transfer objelerini Pojo'ya Pojo objelerinin Data Transfer Objelerine dönüştürüldüğü paket.
-* dto        : Data Transler objeleri
-* entity     : Database entity objeleri
-* repository : JpaRepository'nin implementasyonlarının gerçekleştiği paket.
-* service    : Servis Katmanı İşlemlerin gerçekleştirildiği paket.
-* api        : Rest API paketi.
+* Bootstrap : Uygulama çalışırken ilk ayarlar burada gerçekleştirildi.
+* Configuration : Security, Swagger , ModelMapper ayarları ve bean'lar burada tanımlandı.
+* Constant   : Uygulama ile ilgili URL tanımlarını Mappings sınıfında static final olarak tanımlandı.
+* Controller : Spring Mvc Controller Sınıfları
+* Converter  : Data Transfer objelerini Pojo'ya Pojo objelerinin Data Transfer Objelerine dönüştürüldüğü paket.
+* Dto        : Data Transler objeleri
+* Entity     : Database entity objeleri
+* Repository : JpaRepository'nin implementasyonlarının gerçekleştiği paket.
+* Service    : Servis Katmanı İşlemlerin gerçekleştirildiği paket.
+* Api        : Rest API paketi.
