@@ -1,7 +1,11 @@
-# Spring Mvc Library
-Spring MVC ile geliştirilmiş Kütüphane uygulaması.
-* **Admin User   : kubilaycicek Password : 1234
-* **Normal User  : normaluser   Password : 1234
+# Spring Mvc & Thymleaf Kütüphane Uygulaması
+Spring Framework ile geliştirilmiş Kütüphane uygulaması.
+Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştiriliyor.
+
+## Kullanıcı Bilgileri
+ Admin  User   : kubilaycicek Password : 1234 <Enter>
+ Normal User   : normaluser   Password : 1234 <Enter>
+  
 ## Kullanılan Teknolojiler
 * Spring Boot 
 * Spring Mvc
