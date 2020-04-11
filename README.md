@@ -33,11 +33,22 @@ Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştirildi.Uyg
 * Test       : AuthorServiceImpl addAuthor metodu'nun testi yazıldı.
  
  ## Nasıl Çalıştırılır ?
- mylib dizininde terminal ile açtıktan sonra ``` mvn clean install ``` komutunu çalıştıralım.
- mylib/target dizinine mylib-0.0.1-SNAPSHOT.jar dosyası oluşturuldu.Bu dizine terminal ile açıp ``` java -jar mylib-0.0.1-SNAPSHOT.jar  ``` komutunu yazalım. <Enter>
+ mylib dizininde terminal ile açıp ``` mvn clean install ``` komutunu çalıştıralım.
+ ```mylib/target``` dizinine ```mylib-0.0.1-SNAPSHOT.jar``` dosyası oluşturuldu.Bu dizini terminal ile açıp ``` java -jar mylib-0.0.1-SNAPSHOT.jar  ``` komutunu yazalım.
   Tarayıcınıza ``` localhost:8080 ``` adresinizi tuşlayarak giriş ekranını açabilirsiniz.
 
 ### Kullanıcı Bilgileri
  * Admin  User  : kubilaycicek Password : 1234 
  * Normal User  : normaluser   Password : 1234
+ 
+### Örnek Ekran Görüntüleri
+#### Giriş Ekranı
+![4444](https://user-images.githubusercontent.com/44985849/79047476-67787780-7c1f-11ea-84a0-f9feeec6ed7e.PNG)
+#### Kitap Listesi
+![11](https://user-images.githubusercontent.com/44985849/79047487-84ad4600-7c1f-11ea-989f-f3cb46722102.PNG)
+
+#### Yazar Ekleme Ekranı
+![3333](https://user-images.githubusercontent.com/44985849/79047500-a9a1b900-7c1f-11ea-8ade-eebf8c73ec0b.PNG)
+
+
  
