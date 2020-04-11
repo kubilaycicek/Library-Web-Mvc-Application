@@ -1,10 +1,6 @@
 # Spring Mvc & Thymleaf Kütüphane Uygulaması
 Spring Framework ile geliştirilmiş Kütüphane uygulaması.
 Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştiriliyor.
-
-## Kullanıcı Bilgileri
- * Admin  User  : kubilaycicek Password : 1234 
- * Normal User  : normaluser   Password : 1234
   
 ## Kullanılan Teknolojiler
 * Java 11.0.6
@@ -31,3 +27,7 @@ Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştiriliyor.
 * Service    : Servis Katmanı İşlemlerin gerçekleştirildiği paket.
 * Api        : Rest API paketi.
 * Test       : AuthorServiceImpl addAuthor metodu'nun testi yazıldı.
+
+## Kullanıcı Bilgileri
+ * Admin  User  : kubilaycicek Password : 1234 
+ * Normal User  : normaluser   Password : 1234
