@@ -1,4 +1,4 @@
-# Spring Mvc & Thymleaf Kütüphane Uygulaması
+# Spring Mvc & Thymeleaf Kütüphane Uygulaması
 Spring Mvc ile geliştirilmiş kütüphane uygulaması.
 Kitap Yazar ve Yayınevi ile ilgili Temel CRUD işlemleri gerçekleştirildi.Uygulama ilk açıldığında iki adet kullanıcı veritabanına bootstrap paketinin DataInitializer sınıfının loadData metodunda tanımlanmıştır.
 * Admin olarak giriş yapan kullanıcı her işlemi gerçekleştirebilir.
