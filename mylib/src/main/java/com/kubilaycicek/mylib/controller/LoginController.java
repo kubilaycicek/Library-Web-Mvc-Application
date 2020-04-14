@@ -15,11 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequiredArgsConstructor
 @Controller
 public class LoginController {
-
     private final UserService userService;
 
     @RequestMapping({"/", "", "login"})
-    public String login(Model model) {
+    public String login() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (!(auth instanceof AnonymousAuthenticationToken)) {
             return "redirect:/web/book/list";
