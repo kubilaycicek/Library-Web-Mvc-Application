@@ -14,7 +14,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 public class AuthorRestController {
-
     private final AuthorService authorService;
 
     @GetMapping("list")
